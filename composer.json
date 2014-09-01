@@ -1,20 +1,19 @@
 {
-    "name": "panique/php-mvc",
+    "name": "bmartin/php-webservice",
     "type": "project",
-    "description": "A simple PHP MVC boilerplate",
-    "keywords": ["mvc", "skeleton", "boilerplate", "naked", "barebone", "application"],
-    "homepage": "https://github.com/panique/php-mvc",
-    "license": "MIT",
+    "description": "A sample PHP Web Service",
+    "keywords": ["mvc", "application"],
+    "homepage": "",
+    "license": "",
     "authors": [
         {
-            "name": "Panique",
-            "homepage": "http://careers.stackoverflow.com/panique",
+            "name": "Brendan Martin",
+            "homepage": "bdotm.com",
             "role": "Developer"
         }
     ],
     "support": {
-        "issues": "https://github.com/panique/php-mvc/issues",
-        "source": "https://github.com/panique/php-mvc"
+        
     },
     "require": {
         "php": ">=5.3.0"

@@ -18,14 +18,14 @@ ini_set("display_errors", 1);
  * Configuration for: Project URL
  * Put your URL here, for local development "127.0.0.1" or "localhost" (plus sub-folder) is fine
  */
-define('URL', 'http://127.0.0.1/php-mvc/');
+define('URL', 'http://php.webservice/');
 
 /**
  * Configuration for: Database
  * This is the place where you define your database credentials, database type etc.
  */
-define('DB_TYPE', 'mysql');
+define('DB_TYPE', 'pgsql');
 define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'php-mvc');
-define('DB_USER', 'root');
-define('DB_PASS', 'mysql');
+define('DB_NAME', 'projects');
+define('DB_USER', 'brendanmartin');
+define('DB_PASS', 'Francis123!');

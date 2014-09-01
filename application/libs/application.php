@@ -23,6 +23,7 @@ class Application
      */
     public function __construct()
     {
+        
         // create array with URL parts in $url
         $this->splitUrl();
 
@@ -54,12 +55,14 @@ class Application
             } else {
                 // default/fallback: call the index() method of a selected controller
                 $this->url_controller->index();
+                // shouldnt this route to an error?
             }
         } else {
             // invalid URL, so simply show home/index
-            require './application/controller/home.php';
-            $home = new Home();
-            $home->index();
+            require './application/controller/errors.php';
+            $error = new Errors();
+            $error->notFound();
+            // invalid URLs should route to a 404
         }
     }
 
@@ -68,23 +71,23 @@ class Application
      */
     private function splitUrl()
     {
-        if (isset($_GET['url'])) {
+
+        if (isset($_SERVER['REQUEST_URI'])) {
 
             // split URL
-            $url = rtrim($_GET['url'], '/');
+            $url = rtrim($_SERVER['REQUEST_URI'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
 
-            // Put URL parts into according properties
-            // By the way, the syntax here is just a short form of if/else, called "Ternary Operators"
-            // @see http://davidwalsh.name/php-shorthand-if-else-ternary-operators
-            $this->url_controller = (isset($url[0]) ? $url[0] : null);
-            $this->url_action = (isset($url[1]) ? $url[1] : null);
-            $this->url_parameter_1 = (isset($url[2]) ? $url[2] : null);
-            $this->url_parameter_2 = (isset($url[3]) ? $url[3] : null);
-            $this->url_parameter_3 = (isset($url[4]) ? $url[4] : null);
 
-            // for debugging. uncomment this if you have problems with the URL
+
+            $this->url_controller = (isset($url[1]) ? $url[1] : null);
+            $this->url_action = (isset($url[2]) ? $url[2] : null);
+            $this->url_parameter_1 = (isset($url[3]) ? $url[3] : null);
+            $this->url_parameter_2 = (isset($url[4]) ? $url[4] : null);
+            $this->url_parameter_3 = (isset($url[5]) ? $url[5] : null);
+
+            
             // echo 'Controller: ' . $this->url_controller . '<br />';
             // echo 'Action: ' . $this->url_action . '<br />';
             // echo 'Parameter 1: ' . $this->url_parameter_1 . '<br />';
