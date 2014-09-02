@@ -26,6 +26,18 @@ class Application
         
         // create array with URL parts in $url
         $this->splitUrl();
+        
+        // $inipath = php_ini_loaded_file();
+        //     if ($inipath) {
+        //         echo 'Loaded php.ini: ' . $inipath;
+        //     } else {
+        //         echo 'A php.ini file is not loaded';
+        //     }
+
+        // echo phpinfo();
+
+
+        // exit();
 
         // check for controller: does such a controller exist ?
         if (file_exists('./application/controller/' . $this->url_controller . '.php')) {
