@@ -28,4 +28,4 @@ define('DB_TYPE', 'pgsql');
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'projects');
 define('DB_USER', 'brendanmartin');
-define('DB_PASS', 'Francis123!');
+define('DB_PASS', '');
